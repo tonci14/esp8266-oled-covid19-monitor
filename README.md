@@ -1,9 +1,18 @@
-# esp8266-oled-covid19-monitor
+# tonci14
+Crated At 2020-03-24
 
-## pinout
-OLED   -   ESP12 Module
-GND    -   GND
-VDD    -   3V3
-SCK    -   D1
-SDA    -   D2
+##### Requiements
+ESP12 Module
+SSD1306 OLED Display
+WiFi Internet Connection ;-)
 
+##### Pin - Out
+|OLED|ESP8266|
+|--------|-------|
+|GND| GND |
+|VCC|3v3|
+|SCK|D1|
+|SDA|D2|
+
+#### Notes
+Server: https://covid2019-api.herokuapp.com/
