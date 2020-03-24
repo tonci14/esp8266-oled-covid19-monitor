@@ -1,4 +1,4 @@
-# tonci14
+# ESP 8266 OLED COVID19 Monitor
 Crated At 2020-03-24
 
 ##### Requiements
