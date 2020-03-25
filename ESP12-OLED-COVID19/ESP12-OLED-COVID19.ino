@@ -16,7 +16,7 @@
 
 
 /// CONFIG
-#define STATE         "Slovakia"
+#define STATE         "sk"
 #define REFRESH_RATE  1 // minutes
 #define WIFI_SSID     ""
 #define WIFI_PASS     ""
@@ -27,7 +27,7 @@ ESP8266WiFiMulti WiFiMulti;
 U8G2_SSD1306_128X64_NONAME_1_HW_I2C u8g2(U8G2_R2, /* reset=*/ U8X8_PIN_NONE);
 
 bool connectedToAp = false;
-String url = "https://covid2019-api.herokuapp.com/country/" + String(STATE);
+String url = "https://coronavirus-tracker-api.herokuapp.com/v2/locations?country_code=" + String(STATE);
 const uint8_t fingerprint[20] = {0x08, 0x3B, 0x71, 0x72, 0x02, 0x43, 0x6E, 0xCA, 0xED, 0x42, 0x86, 0x93, 0xBA, 0x7E, 0xDF, 0x81, 0xC4, 0xBC, 0x62, 0x30};
 
 
@@ -69,9 +69,9 @@ void drawBoot()
 void draw(String datas) {
   StaticJsonDocument<2048> doc;
   DeserializationError error = deserializeJson(doc, datas);
-  const int confirmed = doc[STATE]["confirmed"];
-  const int recovered = doc[STATE]["recovered"];
-  const int deaths = doc[STATE]["deaths"];
+  const int confirmed = doc["latest"]["confirmed"];
+  const int recovered = doc["latest"]["recovered"];
+  const int deaths = doc["latest"]["deaths"];
   // Test if parsing succeeds.
   if (error) {
     Serial.print(F("deserializeJson() failed: "));
