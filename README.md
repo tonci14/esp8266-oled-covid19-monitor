@@ -15,4 +15,4 @@ WiFi Internet Connection ;-)
 |SDA|D2|
 
 #### Notes
-Server: https://covid2019-api.herokuapp.com/
+User Server API and DOCS: https://github.com/ExpDev07/coronavirus-tracker-api
